@@ -1,6 +1,7 @@
 # Task 1 Makefile
 
-CFLAGS = -Wall -Wextra -Werror -lm
+CFLAGS = -Wall -Wextra -Werror
+LIBS = -lm
 EXECS = lower sin_sum
 
 help:
@@ -12,7 +13,7 @@ help:
 	@echo "Remove all executables with 'make clean'"
 
 %: %.c
-	gcc $(CFLAGS) $< -o $@
+	gcc $(CFLAGS) $< -o $@ $(LIBS)
 
 clean:
 	@rm -f $(EXECS)
